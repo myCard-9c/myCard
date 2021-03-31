@@ -1,0 +1,239 @@
+{% extends 'myCard/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+  Public Cards
+{% endblock %}
+
+{% block main_block %}
+<!-- Introduction -->
+<section class="bg-grey text-black">
+  <div class="container px-5 pt-3">
+    <div class="row pt-5">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold my-4">Public cards</h1>
+        <p class="fs-5">Need to be inspired? Check out what our users have created and combine them with our templates and card builder tool to finish your presentation in minutes.</p>
+        <div class="row d-flex justify-content-center">
+          <h5 class="fw-bold mt-5 text-center">Ready to create your Personal Card?</h5>
+          <div class="col-auto my-3">
+            <a class="btn btn-main btn-md py-3 px-4" href="#">START NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-auto d-flex justify-content-center">
+        <img src="{% static 'images/cards/card_public_page.png' %}" alt="Public Cards picture" style="max-width: 100%; height: auto; align-self: center">
+      </div>
+    </div>
+</section>
+<!-- Introduction -->
+<!-- Public Cards -->
+<section class="bg-white text-center text-black">
+  <div class="container-fluid py-5">
+    <p class="fs-5 text-muted">Here are the last 9 Personal Cards from the users</p>
+    <!-- First row -->
+    <div class="row justify-content-center pt-5">
+      <!-- Card 1 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 1</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 1 -->
+      <!-- Card 2 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 2</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_2.png' %}" alt="card 2 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <!-- Card 3 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 3</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_3.png' %}" alt="card 3 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 3 -->
+    </div>
+    <!-- First row -->
+    <hr style="width: 50%; margin: auto">
+    <!-- Second row -->
+    <div class="row justify-content-center pt-5">
+      <!-- Card 4 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 4</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_3.png' %}" alt="card 3 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <!-- Card 5 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 5</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <!-- Card 6 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 6</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_2.png' %}" alt="card 2 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 6 -->
+    </div>
+    <!-- Second row -->
+    <hr style="width: 50%; margin: auto">
+    <!-- Third row -->
+    <div class="row justify-content-center pt-5">
+      <!-- Card 7 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 7</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_2.png' %}" alt="card 2 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <!-- Card 8 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 8</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_3.png' %}" alt="card 3 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <!-- Card 9 -->
+      <div class="col-sm-auto col-lg-3 pb-5">
+        <div class="card crd-public">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title mb-0">USERNAME 9</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" style="max-width: 100%; height: auto; align-self: center">
+        </div>
+      </div>
+      <!-- Card 9 -->
+    </div>
+    <!-- Third row -->
+  </div>
+</section>
+<!-- Public cards -->
+{% endblock %}
