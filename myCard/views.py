@@ -20,3 +20,7 @@ def signup(request):
 def dashboard(request):
     # Return the response
     return render(request, 'myCard/dashboard.html')
+
+def create_card(request):
+    # Return the response
+    return render(request, 'myCard/create_card.html')
