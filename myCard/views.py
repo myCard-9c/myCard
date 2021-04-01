@@ -8,3 +8,7 @@ def index(request):
 def public_cards(request):
     # Return the response
     return render(request, 'myCard/public_cards.html')
+
+def login(request):
+    # Return the response
+    return render(request, 'myCard/login.html')
