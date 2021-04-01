@@ -16,3 +16,7 @@ def login(request):
 def signup(request):
     # Return the response
     return render(request, 'myCard/signup.html')
+
+def dashboard(request):
+    # Return the response
+    return render(request, 'myCard/dashboard.html')
