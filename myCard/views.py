@@ -12,3 +12,7 @@ def public_cards(request):
 def login(request):
     # Return the response
     return render(request, 'myCard/login.html')
+
+def signup(request):
+    # Return the response
+    return render(request, 'myCard/signup.html')
