@@ -58,11 +58,13 @@ def register(request):
         user_form = UserForm()
 
     return render(request, 'myCard/register.html', context = {'user_form' : user_form, 'registered' : registered})
-
+    
+@login_required
 def dashboard(request):
     # Return the response
     return render(request, 'myCard/dashboard.html')
 
+@login_required
 def create_card(request):
     # Return the response
     return render(request, 'myCard/create_card.html')

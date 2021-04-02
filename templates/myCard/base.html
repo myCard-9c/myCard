@@ -38,6 +38,7 @@
               <li><a class="nav-link" href="#">Resume Tips</a></li>
               <li><a class="nav-link disabled" href="#">|</a></li>
               {% if request.user.is_authenticated %}
+                <span class="navbar-brand fs-6" id="welcome-message">Hello, {{ request.user }}</span>
                 <li><a class="nav-link" href="{% url 'myCard:dashboard' %}">Dashboard</a></li>
                 <li><a class="nav-link" id="logout" href="{% url 'myCard:logout' %}">Log Out</a></li>
               {% else %}
