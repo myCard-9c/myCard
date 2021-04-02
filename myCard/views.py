@@ -64,3 +64,7 @@ def dashboard(request):
 def create_card(request):
     # Return the response
     return render(request, 'myCard/create_card.html')
+
+def resume_tips(request):
+    # Return the response
+    return render(request, 'myCard/resume_tips.html')

@@ -1,0 +1,104 @@
+{% extends 'myCard/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+  Resume Tips
+{% endblock %}
+
+{% block main_block %}
+<!-- Introduction -->
+<section class="bg-grey text-black">
+  <div class="container px-5 pt-3">
+    <div class="row pt-5">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold my-4">5 Tips to write a Professional resume</h1>
+        <p class="fs-5">
+          Throughout the recruiting process, managers use resumes to learn more about candidates and whether they will be a good match.
+          Your resume should be simple to read: outline your achievements and abilities, and emphasize applicable experience.
+          Here are 5 resume writing tips to get you started.</p>
+      </div>
+      <div class="col-md-6 col-sm-auto d-flex justify-content-center">
+        <img src="{% static 'images/resume.png' %}" alt="Resume" style="max-width: 100%; height: auto; align-self: center">
+      </div>
+    </div>
+</section>
+<!-- Introduction -->
+<!-- Resume Tips -->
+<section class="bg-white text-black">
+  <div class="container py-5 px-5">
+    <h3 class="fw-bold text-center">Resume Tips</h3>
+    <p class="fs-5 pt-3">
+      Although there are a few resume templates that are widely used, your resume should represent your particular qualifications,
+      experience, and related skills. Try making several copies of your resume that are customized to the positions you're applying for.
+    </p>
+    <p class="fs-5">Here are some valuable resume writing tips to help you plan and build your resume.</p>
+    <section class="py-3">
+      <div class="row py-3">
+       <div class="col-auto col-lg-8">
+          <h4 class="fw-bold">1. Look for keywords in the job postings</h4>
+          <p class="fs-5 fw-normal pt-1">
+            When planning to write a resume, the safest way to start is to closely read the work listings that concern you.
+            When you apply for positions, read the job descriptions carefully for keywords that indicate what the boss is looking for in an ideal employee.
+            Use such keywords in your resume as necessary.
+          </p>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="{% static 'images/tips/keyconcepts.png' %}" alt="Key concepts" class="img-fluid" width="250">
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-auto col-lg-4 d-flex justify-content-center">
+          <img src="{% static 'images/tips/industry.png' %}" alt="Industry" class="img-fluid" width="250">
+        </div>
+        <div class="col-auto col-lg-8">
+          <h4 class="fw-bold">2. Review resume examples for your industry</h4>
+          <p class="fs-5 fw-normal pt-1">
+          When creating your resume, you might want to look at samples from your business for ideas and best practices.
+          Although there are various ways to use resume samples, bear in mind that they are not supposed to be replicated precisely.
+          If you can not use prototypes as a template, they will serve as examples of high-quality resumes in your field and work description.
+          </p>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-auto col-lg-8">
+          <h4 class="fw-bold">3. Use a professional font</h4>
+          <p class="fs-5 fw-normal pt-1">
+           Since employers will have a short time to review your resume, it should be as succinct and easy to read as possible.
+           Use a plain, clean font like Arial or Times New Roman. Maintain a font size of 10 to 12 points.
+           Choosing a simple, understandable font will make your resume look more polished.
+          </p>
+        </div>
+        <div class="col-auto col-lg-4 d-flex justify-content-center">
+          <img src="{% static 'images/tips/professional.png' %}" alt="Professional" class="img-fluid" width="250">
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-auto col-lg-4 d-flex justify-content-center">
+          <img src="{% static 'images/tips/active.png' %}" alt="Actives" class="img-fluid" width="250">
+        </div>
+        <div class="col-auto col-lg-8">
+          <h4 class="fw-bold">4. Use active language</h4>
+          <p class="fs-5 fw-normal pt-1">
+            Your resume should be written usign active language, with no extraneous word.
+            This involves using terms like "achieved", "earned", "completed", or "accomplished".
+            If your resume is too lengthy or is difficult to read, try making sentences shorter or ideas more succinct.
+          </p>
+        </div>
+      </div>
+      <div class="row py-3">
+        <h4 class="fw-bold">5. Proofread and edit</h4>
+        <div class="col-auto col-lg-8">
+          <p class="fs-5 fw-normal pt-1">
+            Before posting your resume, you must proofread it several times to ensure there are no spelling or grammar errors.
+            Although there are many proofreading services and tools available, asking trustworthy friends to check your resume is also useful.
+          </p>
+        </div>
+        <div class="col-auto col-lg-4 d-flex justify-content-center">
+          <img src="{% static 'images/tips/proofread.png' %}" alt="Proofread" class="img-fluid" width="250">
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<!-- Resume Tips -->
+{% endblock %}
