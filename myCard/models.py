@@ -20,3 +20,9 @@ class Card(models.Model):
     visibility =  models.BooleanField()
     def __str__(self):
         return self.name
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username

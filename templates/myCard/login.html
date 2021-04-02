@@ -15,26 +15,29 @@
           <div class="card-body px-5">
             <div class="my-md-5">
               <div class="text-center text-white pt-1">
-                <h2 class="fw-bold">Welcome back!</h2>
+                <h2 class="fw-bold">Nice to see you back!</h2>
                 <h3 class="fw-bold mb-5">Log In below</h3>
               </div>
               <form id="login_form" action="{% url 'myCard:login' %}" method="post">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
+                  <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
+                  <label for="floatingInput">Username</label>
                 </div>
                 <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Password</label>
                 </div>
                 <div class="text-center pt-4">
                   <button class="btn btn-home btn-lg px-5" type="submit">Login</button>
                 </div>
+                <div class="text-center py-4">
+                {% if messages %}
+                  {% for message in messages %}
+                    <p class="text-white">{{ message }}</p>
+                  {% endfor %}
+                {% endif %}
               </form>
-              <div class="text-center py-4">
-                <p><a href="#" class="text-white fw-bold">Forgot password?</a></p>
-              </div>
               <div class="text-center">
                 <p class="text-white">Don't have an account? - <a href="{% url 'myCard:signup' %}" class="text-white fw-bold">Sign Up!</a></p>
               </div>

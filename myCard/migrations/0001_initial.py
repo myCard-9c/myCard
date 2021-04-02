@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+
             name='Card',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -32,6 +33,10 @@ class Migration(migrations.Migration):
                 ('about', models.CharField(blank=True, max_length=150)),
                 ('visibility', models.BooleanField()),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+            name='UserProfile',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
