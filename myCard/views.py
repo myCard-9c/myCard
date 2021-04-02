@@ -4,6 +4,7 @@ from myCard.forms import UserForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def index(request):
     # Return the response
@@ -20,18 +21,13 @@ def user_login(request):
 
         user = authenticate(username=username, password=password)
 
-        if user:
-            if user.is_active:
-                login(request, user)
-                return redirect(reverse('myCard:index'))
-            else:
-                return HttpResponse("Your myCard account has been disabled. Please contact Technical Support.")
+        if user is not None:
+            login(request, user)
+            return redirect(reverse('myCard:index'))
         else:
-            print(f"Invalid login details: {username}, {password}")
-            return HttpResponse("Invalid login details supplied.")
+            messages.info(request, "Username or password is incorrect.")
 
-    else:
-        return render(request, 'myCard/login.html')
+    return render(request, 'myCard/login.html')
 
 @login_required
 def user_logout(request):
@@ -58,7 +54,7 @@ def register(request):
         user_form = UserForm()
 
     return render(request, 'myCard/register.html', context = {'user_form' : user_form, 'registered' : registered})
-    
+
 @login_required
 def dashboard(request):
     # Return the response
