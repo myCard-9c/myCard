@@ -36,12 +36,13 @@
               <li><a class="nav-link" href="{% url 'myCard:index' %}">Home</a></li>
               <li><a class="nav-link" href="{% url 'myCard:public_cards' %}">Public Cards</a></li>
               <li><a class="nav-link" href="{% url 'myCard:resume_tips' %}">Resume Tips</a></li>
-              <li><a class="nav-link disabled" href="#">|</a></li>
               {% if request.user.is_authenticated %}
-                <span class="navbar-brand fs-6" id="welcome-message">Hello, {{ request.user }}</span>
                 <li><a class="nav-link" href="{% url 'myCard:dashboard' %}">Dashboard</a></li>
+                <span class="navbar-text">|</span>
+                <span class="navbar-text" id="welcome-message">Hello, {{ request.user }}</span>
                 <li><a class="btn btn-main" id="logout" href="{% url 'myCard:logout' %}">Log Out</a></li>
               {% else %}
+                <span class="navbar-text">|</span>
                 <li><a class="nav-link" id="login" href="{% url 'myCard:login' %}">Log In</a></li>
                 <li><a class="btn btn-main" href="{% url 'myCard:signup' %}">Sign Up</a></li>
               {% endif %}

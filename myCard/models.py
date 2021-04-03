@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import validate_email, MaxValueValidator,URLValidator
-# Create your models here.
-
 
 class Card(models.Model):
     name = models.CharField(max_length=50, unique=True)
