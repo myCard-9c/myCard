@@ -5,7 +5,7 @@ from django.core.validators import validate_email, MaxValueValidator,URLValidato
 
 
 class Card(models.Model):
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=50,)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     first_name = models.CharField(max_length=100,blank = True)
     last_name = models.CharField(max_length=100,blank = True)
@@ -23,6 +23,5 @@ class Card(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
     def __str__(self):
         return self.user.username
