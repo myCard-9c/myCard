@@ -13,8 +13,6 @@ class Card(models.Model):
     occupation =  models.CharField(max_length=50,blank = True)
     website =  models.URLField(blank = True)
     picture = models.ImageField(blank = True)
-    media_links =  models.URLField(blank = True)
-    about =  models.CharField(blank = True,max_length=150)
     visibility =  models.BooleanField()
     def __str__(self):
         return self.name

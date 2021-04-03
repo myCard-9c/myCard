@@ -12,4 +12,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('create_card/', views.create_card, name='create_card'),
     path('resume_tips/', views.resume_tips, name='resume_tips'),
+    path('your_card/', views.your_card, name='your_card')
 ]

@@ -17,9 +17,9 @@
      </div>
      <div class="row">
        <div class="py-5 bg-main rounded-3 text-center text-white">
-         <img src="{% static 'images/user1.png' %}" alt="User picture" class="img-fluid rounded-circle py-3" width="200">
+         <img src="{% static 'images/illustrations/user1.png' %}" alt="User picture" class="img-fluid rounded-circle py-3" width="200">
          <div class="py-2">
-          <h4 class="fw-bold text-uppercase">Josè Carter</h4>
+          <h4 class="fw-bold text-uppercase">{{ request.user }}</h4>
          </div>
        </div>
      </div>
@@ -115,9 +115,9 @@
     <div class="mt-5 bg-light text-center">
       <h3 class="fw-bold">Are you done for today?</h3>
       <div class="pt-4">
-       <a class="btn btn-lg btn-main" href="#">Log Out</a>
+       <a class="btn btn-lg btn-main" href="{% url 'myCard:logout' %}">Log Out</a>
       </div>
-      <img src="{% static 'images/bye.png' %}" alt="Bye bye" class="img-fluid py-3" width="250">
+      <img src="{% static 'images/illustrations/bye.png' %}" alt="Bye bye" class="img-fluid py-3" width="250">
     </div>
   </div>
   <!-- Log out -->
