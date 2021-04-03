@@ -6,7 +6,8 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from myCard.models import Card
+from django.views import View
 def index(request):
     # List of the last 3 visible Card
     card_list = Card.objects.order_by('-id').filter(visibility=True)[:3]
@@ -89,6 +90,15 @@ def create_card(request):
 def resume_tips(request):
     # Return the response
     return render(request, 'myCard/resume_tips.html')
+    
+    
+def edit_card(request):
+   return render(request, 'myCard/edit_card.html')
+   
+class generate_card(View):
+    def get(self, request):
+        card = Card.objects.order_by('id')[0]
+        return render(request, 'myCard/card.html',context = {'card':card})
 
 def your_card(request):
     card = Card.objects.get(name='Card_name')
