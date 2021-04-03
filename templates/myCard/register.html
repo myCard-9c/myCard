@@ -1,5 +1,6 @@
 {% extends 'myCard/base.html' %}
 {% load staticfiles %}
+{% load socialaccount %}
 
 {% block title_block %}
   Sign Up
@@ -54,12 +55,16 @@
                   <label for="floatingPassword">Password (again)</label>
                 </div>
                 -->
-                <div class="text-center py-5">
+                <div class="text-center pt-4 pb-1">
                   <button class="btn btn-home btn-lg px-5" type="submit">Sign Up</button>
                 </div>
               </form>
-              <div class="text-center">
-                <p class="text-white">Already a member? - <a href="{% url 'myCard:login' %}" class="text-white fw-bold">Log In!</a></p>
+              <div class="pt-5 pb-3">
+                <span class="text-white">or</span>
+                <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/google_signup.png'%}" alt="Google Sign Up" height="50" class="d-inline-block align-middle px-2"></a></p>
+              </div>
+              <div class="text-center text-white">
+                <p>Already a member? - <a href="{% url 'myCard:login' %}" class="fw-bold text-white">Log In!</a></p>
               </div>
             </div>
           </div>

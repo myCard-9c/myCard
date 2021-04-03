@@ -17,11 +17,7 @@
     </div>
     <div class="row justify-content-center pb-5">
       <div class="col-auto pb-2">
-        {% if request.user.is_authenticated %}
         <a class="btn btn-home btn-lg mt-5 py-3 px-4" href="{% url 'myCard:create_card' %}" role="button">CREATE YOUR CARD!</a>
-        {% else %}
-        <a class="btn btn-home btn-lg mt-5 py-3 px-4" href="{% url 'myCard:login' %}" role="button">CREATE YOUR CARD!</a>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -30,93 +26,42 @@
 <!-- User Cards -->
 <section class="bg-grey text-center text-black">
   <div class="container py-5">
-    <img src="{% static 'images/goals.png' %}" alt="Objectives" height="250">
+    <img src="{% static 'images/illustrations/goals.png' %}" alt="Objectives" height="250">
     <div class="row justify-content-center py-5">
       <div class="col-auto">
         <h1 class="display-7 fw-bold">Check the Personal Cards created by our users!</h1>
         <p class="fs-5 my-1">Get inspired by the Personal Cards of our users: share or download them as PDF files!</p>
       </div>
     </div>
-    <!-- Cards carousel -->
-    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <!-- Card 1 -->
-        <div class="carousel-item active">
-          <div class="card crd-home">
-            <div class="card-body">
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <h5 class="card-title mb-0">USERNAME 1</h5>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <a class="btn btn-main" href="#">Share</a>
-                  <a class="btn btn-main" href="#">Download</a>
-                </div>
+    {% if cards %}
+    <!-- Cards -->
+    <div class="row">
+      {% for c in cards %}
+      <div class="col">
+        <div class="card crd-home">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <h5 class="card-title text-uppercase mb-0">{{ c.user }}</h5>
+                <p class="card-text"><small class="text-muted">{{ c.name }}</small></p>
               </div>
             </div>
-            <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" class="shadow-lg" style="max-width: 100%; height: auto; align-self: center">
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="carousel-item">
-          <div class="card crd-home">
-            <div class="card-body">
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <h5 class="card-title mb-0">USERNAME 2</h5>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <a class="btn btn-main" href="#">Share</a>
-                  <a class="btn btn-main" href="#">Download</a>
-                </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto mb-2">
+                <a class="btn btn-main" href="#">Share</a>
+                <a class="btn btn-main" href="#">Download</a>
               </div>
             </div>
-            <img src="{% static 'images/cards/example_2.png' %}" alt="card 2 - example" class="shadow-lg" style="max-width: 100%; height: auto; align-self: center">
           </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="carousel-item">
-          <div class="card crd-home">
-            <div class="card-body">
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <h5 class="card-title mb-0">USERNAME 3</h5>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-              <div class="row d-flex justify-content-center">
-                <div class="col-auto mb-2">
-                  <a class="btn btn-main" href="#">Share</a>
-                  <a class="btn btn-main" href="#">Download</a>
-                </div>
-              </div>
-            </div>
-            <img src="{% static 'images/cards/example_3.png' %}" alt="card 3 - example" class="shadow-lg" style="max-width: 100%; height: auto; align-self: center">
-          </div>
+          <img src="{{ MEDIA_URL }}{{ c.picture }}" alt="card 1 - example" class="shadow-lg" style="max-width: 100%; height: auto; align-self: center">
         </div>
       </div>
-      <!-- Buttons -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      {% endfor %}
     </div>
-    <!-- Cards carousel -->
+    <!-- Cards -->
+    {% else %}
+      <strong>There are no cards present.</strong>
+    {% endif %}
     <!-- Public Cards link -->
     <div class="row d-flex pt-4 justify-content-center">
       <h5 class="fw-bold mt-5 text-center">Want to see more? Press the button below:</h5>

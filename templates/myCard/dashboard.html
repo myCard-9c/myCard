@@ -17,127 +17,66 @@
       </div>
       <div class="row">
         <div class="py-5 bg-main rounded-3 text-center text-white">
-          <img src="{% static 'images/user1.png' %}" alt="User picture" class="img-fluid rounded-circle py-3" width="200">
+          <img src="{% static 'images/illustrations/user1.png' %}" alt="User picture" class="img-fluid rounded-circle py-3" width="200">
           <div class="py-2">
-           <h4 class="fw-bold text-uppercase">Josè Carter</h4>
+           <h4 class="fw-bold text-uppercase">{{ request.user }}</h4>
           </div>
         </div>
       </div>
      <div class="row d-none d-md-block">
        <div class="py-5 my-5 bg-light text-center">
-         <h3 class="fw-bold">Feel creative?</h3>
+         <h3 class="fw-bold">Need to be inspired?</h3>
          <div class="pt-4">
-          <a class="btn btn-lg btn-main" href="{% url 'myCard:create_card' %}">Create your card</a>
+          <a class="btn btn-lg btn-main" href="{% url 'myCard:public_cards' %}">Visit Public Cards</a>
          </div>
-         <img src="{% static 'images/creative.png' %}" alt="Creative" class="img-fluid py-3" width="250">
+         <img src="{% static 'images/illustrations/card_public_page.png' %}" alt="Public Cards" class="img-fluid py-3" width="250">
        </div>
      </div>
    </div>
    <div class="col-12 col-md-8">
      <div class="p-5 py-3 bg-main rounded-3 text-white">
        <h2>YOUR CARDS</h2>
-       <p>Here you can share, download or edit your cards!</p>
+       {% if cards %}
+       <p>Here you can view your cards!</p>
+       {% else %}
+       {% endif %}
        <!-- User cards -->
        <div class="py-2">
-         <!-- First row -->
          <div class="row justify-content-center pt-2">
-           <!-- Card 1 -->
-           <div class="col-sm-auto col-lg-6 pb-5">
-             <div class="card" style="border: none">
-               <div class="card-body">
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+           {% if cards %}
+           <!-- Cards -->
+           <div class="row">
+             {% for c in cards %}
+             <div class="col-sm-auto col-lg-6 pb-5">
+               <div class="card" style="border: none">
+                 <div class="card-body">
+                   <div class="row d-flex justify-content-center">
+                     <div class="col-auto mb-2">
+                       <h5 class="card-title text-uppercase text-dark mb-0">{{ c.name }}</h5>
+                     </div>
                    </div>
                  </div>
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <a class="btn btn-main" href="#">Share</a>
-                     <a class="btn btn-main" href="#">Download</a>
-                     <a class="btn btn-main" href="#">Edit</a>
-                   </div>
-                 </div>
+                 <img src="{{ MEDIA_URL }}{{ c.picture }}" alt="card image" style="max-width: 100%; height: auto; align-self: center">
                </div>
-               <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" style="max-width: 100%; height: auto; align-self: center">
              </div>
+             {% endfor %}
            </div>
-           <!-- Card 1 -->
-           <!-- Card 2 -->
-           <div class="col-sm-auto col-lg-6 pb-5">
-             <div class="card" style="border: none">
-               <div class="card-body">
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                   </div>
-                 </div>
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <a class="btn btn-main" href="#">Share</a>
-                     <a class="btn btn-main" href="#">Download</a>
-                     <a class="btn btn-main" href="#">Edit</a>
-                   </div>
-                 </div>
-               </div>
-               <img src="{% static 'images/cards/example_2.png' %}" alt="card 2 - example" style="max-width: 100%; height: auto; align-self: center">
+           <!-- Cards -->
+           {% else %}
+           <div class="row d-flex justify-content-center text-white">
+             <h5 class="fw-bold mt-5 text-center">No Personal Cards present. Start creating yours!</h5>
+             <div class="col-auto my-3">
+               <a class="btn btn-home btn-md py-3 px-4" href="{% url 'myCard:create_card' %}">CREATE YOUR CARD</a>
              </div>
-           </div>
-           <!-- Card 2 -->
+             <img src="{% static 'images/illustrations/start_card.png' %}" alt="Be creative" style="align-self: center">
+            </div>
+           {% endif %}
          </div>
-         <!-- First row -->
-         <hr style="width: 50%; margin: auto">
-         <!-- Second row -->
-         <div class="row justify-content-center pt-5">
-           <!-- Card 3 -->
-           <div class="col-sm-auto col-lg-6 pb-5">
-             <div class="card" style="border: none">
-               <div class="card-body">
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                   </div>
-                 </div>
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <a class="btn btn-main" href="#">Share</a>
-                     <a class="btn btn-main" href="#">Download</a>
-                     <a class="btn btn-main" href="#">Edit</a>
-                   </div>
-                 </div>
-               </div>
-               <img src="{% static 'images/cards/example_3.png' %}" alt="card 3 - example" style="max-width: 100%; height: auto; align-self: center">
-             </div>
-           </div>
-           <!-- Card 3 -->
-           <!-- Card 4 -->
-           <div class="col-sm-auto col-lg-6 pb-5">
-             <div class="card" style="border: none">
-               <div class="card-body">
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                   </div>
-                 </div>
-                 <div class="row d-flex justify-content-center">
-                   <div class="col-auto mb-2">
-                     <a class="btn btn-main" href="#">Share</a>
-                     <a class="btn btn-main" href="#">Download</a>
-                     <a class="btn btn-main" href="#">Edit</a>
-                   </div>
-                 </div>
-               </div>
-               <img src="{% static 'images/cards/example_1.png' %}" alt="card 1 - example" style="max-width: 100%; height: auto; align-self: center">
-             </div>
-           </div>
-           <!-- Card 4 -->
-         </div>
-         <!-- Second row -->
        </div>
        <!-- User cards -->
      </div>
    </div>
   </div>
 </div>
-
 <!-- User dashboard -->
 {% endblock %}

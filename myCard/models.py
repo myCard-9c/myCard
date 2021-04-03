@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import validate_email, MaxValueValidator,URLValidator
-# Create your models here.
-
 
 class Card(models.Model):
     name = models.CharField(max_length=50,)
@@ -15,8 +13,6 @@ class Card(models.Model):
     occupation =  models.CharField(max_length=50,blank = True)
     website =  models.URLField(blank = True)
     picture = models.ImageField(blank = True)
-    media_links =  models.URLField(blank = True)
-    about =  models.CharField(blank = True,max_length=150)
     visibility =  models.BooleanField()
     def __str__(self):
         return self.name

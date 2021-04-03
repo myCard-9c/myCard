@@ -4,7 +4,4 @@ from myCard.models import Card
 
 
 admin.site.register(Card)
-
-
 admin.site.register(UserProfile)
-

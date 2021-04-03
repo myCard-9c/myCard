@@ -1,5 +1,6 @@
 {% extends 'myCard/base.html' %}
 {% load staticfiles %}
+{% load socialaccount %}
 
 {% block title_block %}
   Log In
@@ -34,10 +35,14 @@
                 <div class="text-center py-4">
                 {% if messages %}
                   {% for message in messages %}
-                    <p class="text-white">{{ message }}</p>
+                    <p class="text-white fw-bold">{{ message }}</p>
                   {% endfor %}
                 {% endif %}
               </form>
+              <div class="pt-5 pb-3">
+                <span class="text-white">or</span>
+                <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/google_login.png'%}" alt="Google Sign Up" height="50" class="d-inline-block align-middle px-2"></a></p>
+              </div>
               <div class="text-center">
                 <p class="text-white">Don't have an account? - <a href="{% url 'myCard:signup' %}" class="text-white fw-bold">Sign Up!</a></p>
               </div>
