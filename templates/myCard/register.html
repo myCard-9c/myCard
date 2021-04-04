@@ -1,9 +1,10 @@
 {% extends 'myCard/base.html' %}
 {% load staticfiles %}
 {% load socialaccount %}
+{% load crispy_forms_tags %}
 
 {% block title_block %}
-  Sign Up
+  Register
 {% endblock %}
 
 {% block main_block %}
@@ -15,50 +16,21 @@
         <div class="card bg-main">
           <div class="card-body px-5">
             <div class="my-md-5">
+              {% if request.user.is_authenticated %}
+              <div class="text-center text-white pt-1">
+                <h2 class="fw-bold">Hello, {{ request.user }}!</h2>
+                <h3 class="fw-bold mb-5">You are already logged in.</h3>
+              </div>
+              {% else %}
               <div class="text-center text-white pt-1">
                 <h2 class="fw-bold">Welcome!</h2>
-                {% if registered %}
-                <h3 class="fw-bold mb-5">Thank you for registering!</h3>
-                <div class="text-center">
-                  <p class="text-white"><a href="{% url 'myCard:login' %}" class="text-white fw-bold">Log In!</a></p>
-                </div>
-                {% else %}
-                <h3 class="fw-bold mb-5">Sign up below</h3>
+                <h3 class="fw-bold mb-5">Register below</h3>
               </div>
-              <form id="user_form" action="{% url 'myCard:signup' %}" method="post" enctype="multipart/form-data">
-                <div class="row mb-3">
-                  <div class="col">
-                    <div class="form-floating">
-                      {% csrf_token %}
-                      {{ user_form.as_p }}
-                      <!-- <input type="text" class="form-control" id="floatingInput" placeholder="First name">
-                      <label for="floatingInput">First name</label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInput" placeholder="Last name">
-                      <label for="floatingInput">Last name</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
-                </div>
-                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password (again)</label>
-                </div>
-                -->
-                <div class="text-center pt-4 pb-1">
-                  <button class="btn btn-home btn-lg px-5" type="submit">Sign Up</button>
-                </div>
-              </form>
+              <form method="POST" class="text-white fw-wold text-start">
+            		{% csrf_token %}
+            		{{ register_form|crispy }}
+            		<button class="btn btn-home btn-lg mt-3" type="submit">Register</button>
+            	</form>
               <div class="pt-5 pb-3">
                 <span class="text-white">or</span>
                 <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/google_signup.png'%}" alt="Google Sign Up" height="50" class="d-inline-block align-middle px-2"></a></p>
@@ -66,6 +38,7 @@
               <div class="text-center text-white">
                 <p>Already a member? - <a href="{% url 'myCard:login' %}" class="fw-bold text-white">Log In!</a></p>
               </div>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -74,5 +47,4 @@
     <!-- Sign Up form -->
   </div>
 </section>
-{% endif %}
 {% endblock %}
