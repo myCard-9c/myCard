@@ -1,15 +1,17 @@
-<div>
-	<h1>{{ card.name }}</h1>
-	<h1>{{ card.user }}</h1>
-	<h1>{{ card.first_name }}</h1>
-	<h1>{{ card.last_name }}</h1>
-	<h1>{{ card.email }}</h1>
-	<h1>{{ card.phone_no }}</h1>
-	<h1>{{ card.location }}</h1>
-	<h1>{{ card.occupation }}</h1>
-	<h1>{{ card.website }}</h1>
-	<h1>{{ card.picture }}</h1>
-	<h1>{{ card.media_links }}</h1>
-	<h1>{{ card.about }}</h1>
-	<h1>{{ card.visibility }}</h1>
-</div>
+{% load staticfiles %}                                  
+      <div class="row text-white text-uppercase px-5 d-flex justify-content-start">
+        <h1 class="display-1 fw-bold"> {{ card.first_name }} {{ card.last_name }} </h1>
+        <h3 class="display-3"> {{ card.occupation }}</h3>
+        <div class="spacer"></div>
+        <div class="row">
+          <div class="col-8">
+            <h3 class="display-5 pb-3"><img src="{% static 'images/card_icons/location.png' %}" height="50"> {{ card.location }}</h3>
+            <h3 class="display-5 pb-3"><img src="{% static 'images/card_icons/email.png' %}" height="50"> {{ card.email }}</h3>
+            <h3 class="display-5"><img src="{% static 'images/card_icons/phone.png' %}" height="50"> {{ card.phone_no }}</h3>
+          </div>
+          <div class="col-4 justify-content-center">
+            <div class="fs-3 pb-3">{{ card.website }}</div>
+			 </div>
+        </div>
+      </div>
+
