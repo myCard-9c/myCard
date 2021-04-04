@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from myCard import views
 
 urlpatterns = [
-    # This maps any URLs starting with rango/ to be handled by rango.
+    # This maps any URLs starting with myCard/ to be handled by myCard.
     path('myCard/', include('myCard.urls')),
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
