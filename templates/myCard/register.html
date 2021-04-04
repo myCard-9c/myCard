@@ -31,6 +31,12 @@
             		{{ register_form|crispy }}
             		<button class="btn btn-home btn-lg mt-3" type="submit">Register</button>
             	</form>
+              <div class="text-center py-4">
+              {% if messages %}
+                {% for message in messages %}
+                  <p class="text-white fw-bold">{{ message }}</p>
+                {% endfor %}
+              {% endif %}
               <div class="pt-5 pb-3">
                 <span class="text-white">or</span>
                 <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/google_signup.png'%}" alt="Google Sign Up" height="50" class="d-inline-block align-middle px-2"></a></p>

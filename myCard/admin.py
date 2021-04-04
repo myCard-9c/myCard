@@ -1,7 +1,5 @@
 from django.contrib import admin
-from myCard.models import UserProfile
-from myCard.models import Card
+from myCard.models import UserProfile, Card
 
-
-admin.site.register(Card)
 admin.site.register(UserProfile)
+admin.site.register(Card)

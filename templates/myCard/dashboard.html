@@ -48,7 +48,7 @@
            <div class="row">
              {% for c in cards %}
              <div class="col-sm-auto col-lg-6 pb-5">
-               <div class="card" style="border: none">
+               <div class="card" id="no-border">
                  <div class="card-body">
                    <div class="row d-flex justify-content-center">
                      <div class="col-auto mb-2">
@@ -68,7 +68,7 @@
              <div class="col-auto my-3">
                <a class="btn btn-home btn-md py-3 px-4" href="{% url 'myCard:create_card' %}">CREATE YOUR CARD</a>
              </div>
-             <img src="{% static 'images/illustrations/start_card.png' %}" alt="Be creative" style="align-self: center">
+             <img src="{% static 'images/illustrations/start_card.png' %}" alt="Be creative" style="max-width: 100%; height: auto; align-self: center">
             </div>
            {% endif %}
          </div>
