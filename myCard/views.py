@@ -97,13 +97,10 @@ def edit_card(request):
    
 class generate_card(View):
     def get(self, request):
-        card = Card.objects.order_by('id')[0]
+        card = Card.objects.get(id=int(request.GET['card_Id']))
         return render(request, 'myCard/card.html',context = {'card':card})
 
 def your_card(request):
-    card = Card.objects.get(name='Card_name')
-    context_dict = {}
-    context_dict["card"] = card
 
     # Return the response
-    return render(request, 'myCard/your_card.html', context_dict)
+    return render(request, 'myCard/your_card.html')

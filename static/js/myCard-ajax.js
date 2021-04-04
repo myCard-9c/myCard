@@ -4,4 +4,11 @@ $(document).ready(function() {
 			$('#card').html(data)
 		});
 	});
+	$('.card').click(function() {
+		var cardId;
+		cardId = $(this).attr("data-cardid");
+		$.get('/myCard/generate_card',{"card_Id": cardId}, function(data){
+			$('#card').html(data);
+		});
+	});
 });
