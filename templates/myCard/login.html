@@ -8,13 +8,19 @@
 
 {% block main_block %}
 <section class="bg-light text-center">
-  <div class="container py-5">
+  <div class="container py-5"">
     <!-- Log In form -->
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-main">
           <div class="card-body px-5">
             <div class="my-md-5">
+              {% if request.user.is_authenticated %}
+              <div class="text-center text-white pt-1">
+                <h2 class="fw-bold">Hello, {{ request.user }}!</h2>
+                <h3 class="fw-bold mb-5">You are already logged in.</h3>
+              </div>
+              {% else %}
               <div class="text-center text-white pt-1">
                 <h2 class="fw-bold">Nice to see you back!</h2>
                 <h3 class="fw-bold mb-5">Log In below</h3>
@@ -44,8 +50,9 @@
                 <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/google_login.png'%}" alt="Google Sign Up" height="50" class="d-inline-block align-middle px-2"></a></p>
               </div>
               <div class="text-center">
-                <p class="text-white">Don't have an account? - <a href="{% url 'myCard:signup' %}" class="text-white fw-bold">Sign Up!</a></p>
+                <p class="text-white">Don't have an account? - <a href="{% url 'myCard:signup' %}" class="text-white fw-bold">Register here!</a></p>
               </div>
+              {% endif %}
             </div>
           </div>
         </div>
