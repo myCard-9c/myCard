@@ -49,21 +49,22 @@
              {% for c in cards %}
               <div class="col-sm-auto col-lg-6 pb-5">
                <div class="card" style="border: none" data-cardid = {{ c.id }}>
-                 <div class="card-body" >
+                 <div class="card-body my-2">
                    <div class="row d-flex justify-content-center">
                      <div class="col-auto mb-2">
                        <h5 class="card-title text-uppercase text-dark mb-0">{{ c.name }}</h5>
                      </div>
                    </div>
                  </div>
-                 <img src="{{ MEDIA_URL }}{{ c.picture }}" alt="card image" style="max-width: 25%; height: auto; align-self: center">
+                 <div class="pb-5 d-flex justify-content-center">
+                   <img src="{{ MEDIA_URL }}{{ c.picture }}" alt="card image" style="max-width: 30%; height: auto; align-self: center">
+                 </div>
                </div>
              </div>
              {% endfor %}
-			 <div id = "card">
-			   </div>
+			       <div id = "card">
+			       </div>
            </div>
-		   
            <!-- Cards -->
            {% else %}
            <div class="row d-flex justify-content-center text-white">

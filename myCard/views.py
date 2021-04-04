@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from myCard.forms import NewUserForm
+from myCard.forms import NewUserForm, CardForm
 from myCard.models import Card
 
 def index(request):
@@ -33,17 +33,17 @@ def resume_tips(request):
 
 def register(request):
     # If the requesti is POST, proceed creating a new user and logging them in
-	if request.method == "POST":
-		form = NewUserForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-			messages.success(request, "Registration successful." )
-			return redirect("myCard:index")
-		messages.error(request, "Unsuccessful registration. Invalid information.")
-	form = NewUserForm
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            messages.success(request, "Registration successful." )
+            return redirect("myCard:index")
+        messages.error(request, "Unsuccessful registration. Invalid information.")
+    form = NewUserForm
     # Return the response
-	return render (request=request, template_name="myCard/register.html", context={"register_form":form})
+    return render (request=request, template_name="myCard/register.html", context={"register_form":form})
 
 def user_login(request):
     # If the requesti is POST, proceed authenticating the user
@@ -77,8 +77,17 @@ def dashboard(request):
 
 @login_required
 def create_card(request):
+    # If the requesti is POST, proceed creating a new Card
+    if request.method == "POST":
+        form = CardForm(request.POST)
+        if form.is_valid():
+            card = form.save()
+            messages.success(request, "Card created successful." )
+            return redirect("myCard:dashboard")
+        messages.error(request, "Unsuccessful card creation. Invalid information.")
+    form = CardForm
     # Return the response
-    return render(request, 'myCard/create_card.html')
+    return render (request=request, template_name="myCard/create_card.html", context={"card_form":form})
 
 def edit_card(request):
     # Return the response

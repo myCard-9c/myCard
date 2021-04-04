@@ -1,17 +1,18 @@
-{% load staticfiles %}                                  
-      <div class="row text-white text-uppercase px-5 d-flex justify-content-start">
-        <h1 class="display-1 fw-bold"> {{ card.first_name }} {{ card.last_name }} </h1>
-        <h3 class="display-3"> {{ card.occupation }}</h3>
-        <div class="spacer"></div>
-        <div class="row">
-          <div class="col-8">
-            <h3 class="display-5 pb-3"><img src="{% static 'images/card_icons/location.png' %}" height="50"> {{ card.location }}</h3>
-            <h3 class="display-5 pb-3"><img src="{% static 'images/card_icons/email.png' %}" height="50"> {{ card.email }}</h3>
-            <h3 class="display-5"><img src="{% static 'images/card_icons/phone.png' %}" height="50"> {{ card.phone_no }}</h3>
-          </div>
-          <div class="col-4 justify-content-center">
-            <div class="fs-3 pb-3">{{ card.website }}</div>
-			 </div>
-        </div>
-      </div>
-
+{% load staticfiles %}
+<div class="row row text-white text-uppercase d-flex justify-content-start">
+  <div class="col-12">
+    <h1 class="fw-bold"> {{ card.first_name }} {{ card.last_name }} </h1>
+    <h3> {{ card.occupation }}</h3>
+  </div>
+</div>
+<div class="row row text-white text-uppercase d-flex justify-content-start">
+  <div class="col-12 col-md-8">
+    <h4 class="py-3"><img src="{% static 'images/card_icons/location.png' %}" height="30"> {{ card.location }}</h4>
+    <h4 class="pb-3"><img src="{% static 'images/card_icons/email.png' %}" height="30"> {{ card.email }}</h4>
+    <h4><img src="{% static 'images/card_icons/phone.png' %}" height="30"> {{ card.phone_no }}</h4>
+  </div>
+  <div class="col-12 col-md-4">
+    <p class="pb-3 text-center">{{ card.website }}</p>
+    <img src="{{ MEDIA_URL }}{{ card.picture }}" alt="card image" style="max-width: 100%; height: auto; align-self: center">
+  </div>
+</div>
