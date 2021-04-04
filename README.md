@@ -45,7 +45,7 @@ Some features will not be functional when running the application on localhost, 
 
 ## External Resources:
 ### Styling:
-##### (https://getbootstrap.com/)
+##### [Bootstrap 5]()
 Bootstrap CSS framework which allows a responsive and intuitive interface.
 ##### Add others, if used
 
