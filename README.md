@@ -46,9 +46,12 @@ Start a test server by running
 Google's OAuth based authentication will not be functional when running the application on localhost, due to security reasons. The set-up process can be explained upon the marker's request.
 
 ## External Resources:
-### Styling:
+### CSS styling:
 ##### [Bootstrap 5](https://getbootstrap.com/)
 Bootstrap CSS framework which allows a responsive and intuitive interface.
+### Illustration:
+##### [Storyset](https://storyset.com/)
+### Technical:
 ##### [html2canvas](https://html2canvas.hertzen.com/) and [jspdf](https://github.com/MrRio/jsPDF)
 Used to convert HTML into PDF
 ##### [DOMPurify](https://github.com/cure53/DOMPurify)
