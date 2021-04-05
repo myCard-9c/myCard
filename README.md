@@ -2,9 +2,8 @@
 
 myCard is a web application built with Django where users can create their own Personal Cards, share and download them. This project runs on Python 3, the source code is available at [https://github.com/myCard-9c/myCard](https://github.com/myCard-9c/myCard) and is deployed at *pythonanywhere_link*.
 
-
-The students who worked on the project are members of:
 ## Lab group 9 - Team C
+The students who worked on the project are:
 - Manuel Simonetta:  2472780S
 - Donald Mackenzie:  2426230M
 - Alex Kilkenny:     2464370K
