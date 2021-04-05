@@ -77,7 +77,7 @@ def dashboard(request):
 
 @login_required
 def create_card(request):
-    # If the requesti is POST, proceed creating a new Card
+    # If the request is POST, proceed creating a new Card
     if request.method == "POST":
         form = CardForm(request.POST)
         if form.is_valid():
