@@ -1,19 +1,18 @@
 # myCard
 
-myCard is a web application built with Django where users can create their own Personal Cards, share and download them.
+myCard is a web application built with Django where users can create their own Personal Cards, share and download them. This project runs on Python 3, the source code is available at [https://github.com/myCard-9c/myCard](https://github.com/myCard-9c/myCard) and is deployed at *pythonanywhere_link*.
 
+
+The students who worked on the project are members of:
 ## Lab group 9 - Team C
 - Manuel Simonetta:  2472780S
-- Donald Mackenzie:	2426230M
-- Alex Kilkenny:	    2464370K
+- Donald Mackenzie:  2426230M
+- Alex Kilkenny:     2464370K
 - Alexander McAteer: 2461479M
 
-The source code is available at [https://github.com/myCard-9c/myCard](https://github.com/myCard-9c/myCard) and is deployed at *pythonanywhere_link*.
 
 ## To deploy locally:
-This project runs on Python 3.
-
-To clone the repository, run
+Clone the repository by running
 
 `git clone https://github.com/myCard-9c/myCard`
 
@@ -45,7 +44,7 @@ Some features will not be functional when running the application on localhost, 
 
 ## External Resources:
 ### Styling:
-##### [Bootstrap 5]()
+##### [Bootstrap 5](https://getbootstrap.com/)
 Bootstrap CSS framework which allows a responsive and intuitive interface.
 ##### Add others, if used
 
