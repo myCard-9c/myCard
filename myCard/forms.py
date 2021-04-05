@@ -37,7 +37,7 @@ class CardForm(forms.ModelForm):
         model = Card
         fields = ('user', 'first_name', 'last_name', 'email', 'phone_no', 'location', 'website', 'occupation', 'name', 'visibility', 'picture')
     # Function to save the Card object
-    def save(self, user, commit=True):
+    def save(self, commit=True):
         card = super(CardForm, self).save(commit=True)
         card.user = self.cleaned_data['user']
         card.name = self.cleaned_data['name']

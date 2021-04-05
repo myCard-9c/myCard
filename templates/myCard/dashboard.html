@@ -37,7 +37,7 @@
      <div class="p-5 py-3 bg-main rounded-3 text-white">
        <h2>YOUR CARDS</h2>
        {% if cards %}
-       <p>Here you can view your cards!</p>
+       <p>Here you can view your cards: click on one of them to save it as PDF!</p>
        {% else %}
        {% endif %}
        <!-- User cards -->
@@ -48,7 +48,7 @@
            <div class="row">
              {% for c in cards %}
               <div class="col-sm-auto col-lg-6 pb-5">
-               <div class="card" style="border: none" data-cardid = {{ c.id }}>
+               <div class="card" style="border: none" data-cardid ={{ c.id }}>
                  <div class="card-body my-2">
                    <div class="row d-flex justify-content-center">
                      <div class="col-auto mb-2">
@@ -62,9 +62,9 @@
                </div>
              </div>
              {% endfor %}
-			 <div class = "bg-main" id = "card">
-			   </div>
-			   <div class="btn btn-lg btn-main" id = "saveBtn">Save</div>
+			       <div class="bg-main" id="card">
+			       </div>
+			       <div class="btn btn-lg btn-main" id="saveBtn">Save</div>
            </div>
            <!-- Cards -->
            {% else %}

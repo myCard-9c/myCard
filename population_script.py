@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 
 # Populate the database creating Users and Cards
 def populate():
-
     # José's cards definition
     jose_picture = 'user_avatars/user1.png'
     jose_cards = [

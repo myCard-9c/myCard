@@ -19,7 +19,7 @@ class Card(models.Model):
     location =  models.CharField(max_length=150,blank = True)
     occupation =  models.CharField(max_length=50,blank = True)
     website =  models.URLField(blank = True)
-    picture = models.ImageField(blank = True)
+    picture = models.ImageField(blank = True, upload_to = "card_user_pictures", default='user_avatars/user1.png')
     visibility =  models.BooleanField()
     def __str__(self):
         return self.name

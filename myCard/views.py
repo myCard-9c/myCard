@@ -82,6 +82,10 @@ def create_card(request):
         form = CardForm(request.POST)
         if form.is_valid():
             card = form.save()
+            # Is there a profile picture?
+            if 'picture' in request.FILES:
+                card.picture = request.FILES['picture']
+            card.save()
             messages.success(request, "Card created successful." )
             return redirect("myCard:dashboard")
         messages.error(request, "Unsuccessful card creation. Invalid information.")
@@ -89,19 +93,7 @@ def create_card(request):
     # Return the response
     return render (request=request, template_name="myCard/create_card.html", context={"card_form":form})
 
-def edit_card(request):
-    # Return the response
-   return render(request, 'myCard/edit_card.html')
-
 class generate_card(View):
     def get(self, request):
         card = Card.objects.get(id=int(request.GET['card_Id']))
         return render(request, 'myCard/card.html',context = {'card':card})
-
-
-def your_card(request):
-    card = Card.objects.get(name='Card_name')
-    context_dict = {}
-    context_dict["card"] = card
-    # Return the response
-    return render(request, 'myCard/your_card.html')
