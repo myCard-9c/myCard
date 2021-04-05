@@ -89,16 +89,18 @@ def create_card(request):
     # Return the response
     return render (request=request, template_name="myCard/create_card.html", context={"card_form":form})
 
+@login_required
 def edit_card(request):
     # Return the response
    return render(request, 'myCard/edit_card.html')
+
 
 class generate_card(View):
     def get(self, request):
         card = Card.objects.get(id=int(request.GET['card_Id']))
         return render(request, 'myCard/card.html',context = {'card':card})
 
-
+@login_required
 def your_card(request):
     card = Card.objects.get(name='Card_name')
     context_dict = {}
