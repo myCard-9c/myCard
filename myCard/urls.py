@@ -14,4 +14,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('create_card/', views.create_card, name='create_card'),
     path('generate_card/', views.generate_card.as_view(), name='generate_card'),
+    path('edit_card/', views.edit_card, name='edit_card'),
 ]

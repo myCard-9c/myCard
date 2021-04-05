@@ -31,6 +31,7 @@
       <div class="col-auto">
         <h1 class="display-7 fw-bold">Check the Personal Cards created by our users!</h1>
         <p class="fs-5 my-1">Get inspired by the Personal Cards of our users!</p>
+        <p class="my-1 text-muted">Click on one to view</p>
       </div>
     </div>
     {% if cards %}
@@ -38,7 +39,7 @@
     <div class="row">
       {% for c in cards %}
       <div class="col">
-        <div class="card crd-home">
+        <div class="card crd-home" data-cardid="{{ c.id }}">
           <div class="card-body">
             <div class="row d-flex justify-content-center">
               <div class="col-auto mb-2">
@@ -53,6 +54,10 @@
         </div>
       </div>
       {% endfor %}
+      <div class="row pt-4 justify-content-center">
+        <div class="col-auto" id="card">
+        </div>
+      </div>
     </div>
     <!-- Cards -->
     {% else %}

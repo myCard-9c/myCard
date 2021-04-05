@@ -1,8 +1,6 @@
 {% load staticfiles %}
-<head>
-  <link href="{% static 'css/your_card.css' %}" rel="stylesheet" type="text/css">
-</head>
-<div class="container custom-card py-5">
+<!-- Need to use inline CSS in order to overwrite the current style -->
+<div class="container py-5" style="background: rgb(145,247,232); background: linear-gradient(45deg, rgba(145,247,232,1) 0%, rgba(48,106,175,1) 100%);">
   <div class="row text-white text-uppercase d-flex justify-content-start">
     <div class="col-12">
       <h1 class="fw-bold">{{ card.first_name }}  {{ card.last_name }}</h1>

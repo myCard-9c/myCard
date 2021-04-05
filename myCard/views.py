@@ -77,21 +77,22 @@ def dashboard(request):
 
 @login_required
 def create_card(request):
-    # If the requesti is POST, proceed creating a new Card
+    # If the request is POST, proceed creating a new Card
     if request.method == "POST":
         form = CardForm(request.POST)
         if form.is_valid():
             card = form.save()
-            # Is there a profile picture?
-            if 'picture' in request.FILES:
-                card.picture = request.FILES['picture']
-            card.save()
             messages.success(request, "Card created successful." )
             return redirect("myCard:dashboard")
         messages.error(request, "Unsuccessful card creation. Invalid information.")
     form = CardForm
     # Return the response
     return render (request=request, template_name="myCard/create_card.html", context={"card_form":form})
+
+@login_required
+def edit_card(request):
+    # Return the response
+   return render(request, 'myCard/edit_card.html')
 
 class generate_card(View):
     def get(self, request):

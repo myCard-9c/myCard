@@ -3,9 +3,6 @@ $(document).ready(function() {
 	var doc = new jsPDF();
 	$("#saveBtn").click(function() {
 		var doc = new jsPDF({format:"a1",orientation:"landscape"});
-		console.log(document.getElementById("card"))
-		doc.html(document.getElementById("card"),{callback: function (doc) {
-     doc.save();
-   },filename :"card.pdf"}).save()
+		doc.html(document.getElementById("card"),{html2canvas:{windowWidth:1536,windowHeight:722},filename :"myCard.pdf"}).save()
 	});
 });

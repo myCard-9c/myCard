@@ -4,7 +4,7 @@ import django
 django.setup()
 from myCard.models import Card
 from django.contrib.auth.models import User
-
+from django.contrib.auth.hashers import make_password
 # Populate the database creating Users and Cards
 def populate():
     # José's cards definition
@@ -139,7 +139,7 @@ def populate():
 
     # Create users dictionary and link their cards
     users = {
-    'jose_carter': {'cards': jose_cards,'firstname':'José','lastname':'Carter','email':'josé.carter@domain.com','password':'Joseito87.'},
+    'jose_carter': {'cards': jose_cards,'firstname':'José','lastname':'Carter','email':'josé.carter@domain.com','password':'Joseito98.'},
     'olivia_brown': {'cards': olivia_cards,'firstname':'Olivia','lastname':'Brown','email':'olivia_brown@domain.com','password':'Olivia00.'},
     'tegan_price': {'cards': tegan_cards,'firstname':'Tegan','lastname':'Price','email':'tegan_price@domain.com','password':'Tegan99.'},
     'micheala_pratt': {'cards': micheala_cards,'firstname':'Micheala','lastname':'Pratt','email':'micheala_pratt@domain.com','password':'Michaela03.'},
@@ -172,7 +172,7 @@ def add_user(name,firstname,lastname,email,password):
     u.firstname = firstname
     u.lastname = lastname
     u.email = email
-    u.password =  password
+    u.password =  make_password(password)
     u.save()
     return u
 
