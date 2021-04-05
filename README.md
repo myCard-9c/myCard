@@ -35,17 +35,24 @@ Start a test server by running
 
 `python manage.py runserver`
 
+#### To log in the auto-created accounts, use the following credentials:
+###### 1) username: *jose_carter* | password: *Joseito98.*
+###### 2) username: *olivia_brown* | password: *Olivia00..*
+###### 3) username: *tegan_price* | password: *Tegan99.*
+###### 4) username: *micheala_pratt* | password: *Micheala03.*
+###### 5) username: *laurel_castillo* | password: *Laurel55.*
+
 #### Important notice:
-Some features will not be functional when running the application on localhost, i.e.:
-###### 1) Google's OAuth based authentication
-###### 2)
-###### 3)
+Google's OAuth based authentication will not be functional when running the application on localhost, due to security reasons. The set-up process can be explained upon the marker's request.
 
 ## External Resources:
 ### Styling:
 ##### [Bootstrap 5](https://getbootstrap.com/)
 Bootstrap CSS framework which allows a responsive and intuitive interface.
-##### Add others, if used
+##### [html2canvas](https://html2canvas.hertzen.com/) and [jspdf](https://github.com/MrRio/jsPDF)
+Used to convert HTML into PDF
+##### [DOMPurify](https://github.com/cure53/DOMPurify)
+Used to clean up HTML files
 
 ### Libraries and Dependencies:
 ##### [django-allauth](https://github.com/pennersr/django-allauth)
