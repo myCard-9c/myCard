@@ -3,9 +3,9 @@
 myCard is a web application built with Django where users can create their own Personal Cards, share and download them.
 
 ## Lab group 9 - Team C
-- Manuel Simonetta:  2472780S
-- Donald Mackenzie:	2426230M
-- Alex Kilkenny:	    2464370K
+- Manuel Simonetta: 2472780S
+- Donald MacKenzie: 2426230M
+- Alex Kilkenny: 2464370K
 - Alexander McAteer: 2461479M
 
 The source code is available at [https://github.com/myCard-9c/myCard](https://github.com/myCard-9c/myCard) and is deployed at *pythonanywhere_link*.
@@ -54,4 +54,7 @@ Bootstrap CSS framework which allows a responsive and intuitive interface.
 Used to implement OAuth authentication.
 ##### [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms)
 Used to customize the django-allauth forms.
-##### Add others, if used
+##### [coverage](https://coverage.readthedocs.io/en/coverage-5.5/)
+Used to generate a coverage report of areas that require testing
+##### [live-server](https://github.com/tapio/live-server)
+Used to view testing coverage with Python's inbuilt 'Coverage' module. (Not required to run tests)

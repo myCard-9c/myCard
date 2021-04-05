@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from myCard.models import UserProfile
+from myCard.models import UserProfile, Card
 from django.contrib import auth
 
 
@@ -25,7 +25,35 @@ class BaseTest(TestCase):
             'password2' : 'Testpass1',
         }
 
+        self.user_diff_password = {
+            'username' : 'testeraccount1',
+            'email' : 'testaccount77@gmail.com',
+            'first_name' : 'tester',
+            'last_name' : 'testertwo',
+            'password1' : 'Testpass1',
+            'password2' : 'Testpass2',
+        }
+
+        self.user_invalid_email = {
+            'username' : 'testeraccount1',
+            'email' : 'testaccount77gmail.com',
+            'first_name' : 'tester',
+            'last_name' : 'testertwo',
+            'password1' : 'Testpass1',
+            'password2' : 'Testpass2',
+        }
+
+        self.create_card = {
+            'user' : 'testeraccount1',
+            'first_name' : 'john',
+
+
+        }
+
         return super().setUp()
+
+    def tearDown(self):
+        pass
 
 class AccessTest(BaseTest):
 
@@ -86,7 +114,25 @@ class AuthenticationTests(BaseTest):
         response = self.client.post(self.register_page, self.user, format = 'text/html')
         self.assertEqual(response.status_code, 302)
 
+    # Test whether invalid password confirmation illicits correct response
+    def test_user_cant_register_wrong_confirmpass(self):
+        response = self.client.post(self.register_page, self.user_diff_password, format = 'text/html')
+        self.assertEqual(response.status_code, 200)
+
+    # Test whether invalid email illicits correct response
+    def test_user_cant_register_invalid_email(self):
+        response = self.client.post(self.register_page, self.user_invalid_email, format = 'text/html')
+        self.assertEqual(response.status_code, 200)
+
     # Test whether valid account can log in
     def test_user_login_success(self):
         response = self.client.post('/myCard/login', {'username' : 'testeraccount1', 'password' : 'Testpass1'})
         self.assertEqual(response.status_code, 301)
+
+class CardCreationTests(BaseTest):
+
+    # Tests whether user can create a card successfully
+    def test_user_can_create_card(self):
+        response = self.client.post('/myCard/login', {'username' : 'testeraccount1', 'password' : 'Testpass1'})
+        create_card = self.client.post(self.create_card_page, self.create_card, format = 'text/html')
+        self.assertIsNotNone(create_card)
