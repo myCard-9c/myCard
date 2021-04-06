@@ -1,6 +1,6 @@
 # myCard
 
-myCard is a web application built with Django where users can create their own Personal Cards, share and download them. This project runs on Python 3, the source code is available at [myCard_GitHub_repository](https://github.com/myCard-9c/myCard) and is deployed at [myCard ⋅ Homepage](https://mycard.pythonanywhere.com/myCard/).
+myCard is a web application built with Django where users can create their own Personal Cards, share and download them. This project runs on Python 3, the source code is available at [myCard_GitHub_repository](https://github.com/myCard-9c/myCard) and is deployed at [myCard.pythonanywhere.com](https://mycard.pythonanywhere.com/myCard/).
 
 ## Lab group 9 - Team C
 The students who worked on the project are:
@@ -44,8 +44,8 @@ Start a test server by running
 
 #### Important notice:
 The following functionalities will not be funcional on the *pythonanywhere* server.
-##### 1) Google's OAuth-based authentication, due to issues with domain ownership. The set-up process on the marker's local machine can be explained upon the request.
-##### 2) The "Download" function, due to issues with loading external JavaScript. This will work if the project is deployed locally.
+###### 1) Google's OAuth-based authentication, due to issues with domain ownership. The set-up process on the marker's local machine can be explained upon the request.
+###### 2) The "Download" function, due to issues with loading external JavaScript. This will work if the project is deployed locally.
 
 
 ## External Resources:
