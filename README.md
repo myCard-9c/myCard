@@ -17,7 +17,7 @@ Clone the repository by running
 
 Once the repository is locally cloned, enter the installation directory:
 
-`cd myCard/myCard`
+`cd myCard`
 
 Next, install the dependencies with
 
